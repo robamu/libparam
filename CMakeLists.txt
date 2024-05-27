@@ -23,10 +23,10 @@ target_sources(libparam PRIVATE
 # src/param/commands/param_commands_slash.c
 # src/param/list/param_list_store_slash.c
 
-target_include_directories(libparam PRIVATE
+target_include_directories(libparam PUBLIC
   include
 )
-target_include_directories(libparam PRIVATE
+target_include_directories(libparam PUBLIC
   ${CMAKE_CURRENT_BINARY_DIR}
 )
 
