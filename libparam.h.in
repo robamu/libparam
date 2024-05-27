@@ -1,1 +1,24 @@
+/*
+ * Hardcoded, taken from meson build.
+ * Do not edit, your changes will be lost.
+ */
 
+#pragma once
+
+#define MPACK_STDIO 1
+
+#define PARAM_HAVE_COMMANDS
+
+#define PARAM_HAVE_SCHEDULER
+
+#define PARAM_HAVE_SYS_QUEUE
+
+#define PARAM_LIST_DYNAMIC
+
+#define PARAM_LIST_POOL 0
+
+#undef PARAM_STORE_FILE
+
+#undef PARAM_STORE_LOG
+
+#undef PARAM_STORE_VMEM
