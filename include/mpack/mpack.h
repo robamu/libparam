@@ -4193,6 +4193,7 @@ MPACK_EXTERN_C_END
 #undef mpack_write_kv
 #endif
 
+/*
 MPACK_INLINE void mpack_write(mpack_writer_t* writer, int8_t value) {
     mpack_write_i8(writer, value);
 }
@@ -4244,9 +4245,11 @@ MPACK_INLINE void mpack_write(mpack_writer_t* writer, char *value) {
 MPACK_INLINE void mpack_write(mpack_writer_t* writer, const char *value) {
     mpack_write_cstr_or_nil(writer, value);
 }
+*/
 
 /* C++ generic write for key-value pairs */
 
+/*
 MPACK_INLINE void mpack_write_kv(mpack_writer_t* writer, const char *key, int8_t value) {
     mpack_write_cstr(writer, key);
     mpack_write_i8(writer, value);
@@ -4311,6 +4314,7 @@ MPACK_INLINE void mpack_write_kv(mpack_writer_t* writer, const char *key, const 
     mpack_write_cstr(writer, key);
     mpack_write_cstr_or_nil(writer, value);
 }
+*/
 
 /**
  * @}
