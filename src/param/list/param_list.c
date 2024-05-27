@@ -425,7 +425,7 @@ int param_list_pack(void* buf, int buf_size, int prio_only, int remote_only, int
 			rparam->size = param->array_size;
 			rparam->mask = htobe32(param->mask);
 			
-			strlcpy(rparam->name, param->name, sizeof(rparam->name));
+			strncpy(rparam->name, param->name, sizeof(rparam->name));
 
 			/* Ensure strings are null terminated */
 			rparam->name[sizeof(rparam->name)-1] = '\0';
@@ -440,18 +440,18 @@ int param_list_pack(void* buf, int buf_size, int prio_only, int remote_only, int
 			rparam->size = param->array_size;
 			rparam->mask = htobe32(param->mask);
 			
-			strlcpy(rparam->name, param->name, sizeof(rparam->name));
+			strncpy(rparam->name, param->name, sizeof(rparam->name));
 
 			if (param->vmem) {
 				rparam->storage_type = param->vmem->type;
 			}
 
 			if (param->unit != NULL) {
-				strlcpy(rparam->unit, param->unit, sizeof(rparam->unit));
+				strncpy(rparam->unit, param->unit, sizeof(rparam->unit));
 			}
 
 			if (param->docstr != NULL) {
-				strlcpy(rparam->help, param->docstr, sizeof(rparam->help));
+				strncpy(rparam->help, param->docstr, sizeof(rparam->help));
 			}
 
 			/* Ensure strings are null terminated */
@@ -625,12 +625,12 @@ param_t * param_list_create_remote(int id, int node, int type, uint32_t mask, in
 	param->vmem->restore = NULL;
 	param->vmem->write = NULL;
 	
-	strlcpy(param->name, name, 36);
+	strncpy(param->name, name, 36);
 	if (unit) {
-		strlcpy(param->unit, unit, 10);
+		strncpy(param->unit, unit, 10);
 	}
 	if (help) {
-		strlcpy(param->docstr, help, 150);
+		strncpy(param->docstr, help, 150);
 	}
 
 	return param;
